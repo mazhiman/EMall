@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">EM</string>
     <string name="RightInfo">© All Right Reserved ZhiMan</string>
+    <string name="start_entrence">开始体验</string>
 </resources>
