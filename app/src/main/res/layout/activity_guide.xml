@@ -40,6 +40,7 @@
         </LinearLayout>
 
         <View
+            android:id="@+id/view_point_red"
             android:layout_width="20px"
             android:layout_height="20px"
             android:background="@drawable/shape_point_red">

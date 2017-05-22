@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 public class WelcomeActivity extends Activity {
+    //若WelcomeActivity继承AppCompatActivity设置全屏，会崩溃
     Handler mHandler = new Handler();
 
 
