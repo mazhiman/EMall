@@ -1,16 +1,20 @@
-package com.example.em;
+package com.example.em.activity;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+
+import com.example.em.R;
 
 import java.util.ArrayList;
 
@@ -24,6 +28,7 @@ public class GuideActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private View viewPointRed;
     private int pointWidth;
+    private Button btnStart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +37,7 @@ public class GuideActivity extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.vp);
         llPoint = (LinearLayout) findViewById(R.id.ll_point_group);
         viewPointRed = findViewById(R.id.view_point_red);
+        btnStart = (Button) findViewById(R.id.btn_start);
         initGuideViews();
         //为viewPager设置适配器
         viewPager.setAdapter(new GuideAdaper());
@@ -84,6 +90,18 @@ public class GuideActivity extends AppCompatActivity {
                 Log.d(TAG,"灰点间距：" + pointWidth);
             }
         });
+
+        /*
+        * 为引导页开始按钮添加监听
+        **/
+        btnStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(GuideActivity.this,MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     class GuideAdaper extends PagerAdapter {
@@ -116,6 +134,7 @@ public class GuideActivity extends AppCompatActivity {
      */
     class GuidePageListener implements ViewPager.OnPageChangeListener{
 
+
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
             Log.d(TAG, "position"+position+"  positionOfset"
@@ -133,7 +152,12 @@ public class GuideActivity extends AppCompatActivity {
 
         @Override
         public void onPageSelected(int position) {
-
+            //让开始按钮出现在最后一个引导页面
+            if(position==mImageIDs.length-1) {
+                btnStart.setVisibility(View.VISIBLE);
+            }else {
+                btnStart.setVisibility(View.GONE);
+            }
         }
 
         @Override

@@ -1,10 +1,12 @@
-package com.example.em;
+package com.example.em.activity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.example.em.R;
 
 public class WelcomeActivity extends Activity {
     //若WelcomeActivity继承AppCompatActivity设置全屏，会崩溃

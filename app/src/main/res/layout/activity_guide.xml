@@ -4,7 +4,7 @@
     android:id="@+id/activity_guide"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.em.GuideActivity">
+    tools:context="com.example.em.activity.GuideActivity">
 
     <!--viewpager-->
     <android.support.v4.view.ViewPager
@@ -22,8 +22,9 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:background="@drawable/btn_guide_selector"
-        android:textColor="@drawable/btn_guide_text_selector"
-        android:text="@string/start_entrence" />
+        android:textColor="@color/btn_guide_text_selector"
+        android:text="@string/start_entrence"
+        android:visibility="gone"/>
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
