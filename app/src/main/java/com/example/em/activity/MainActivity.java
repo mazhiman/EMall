@@ -28,26 +28,22 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //测试自定义MyToolBar
+        //setContentView(R.layout.activity_test);
         setContentView(R.layout.activity_main);
-        //不能写R.id.tabhost
+
+
+
+
+       //不能写R.id.tabhost!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
         mTabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
-        //FragmentTabHost必须调用setup（）；
+        //FragmentTabHost必须调用setup（）；!!!!!!!!!!!!!!!!!!!
         mTabHost.setup(this,getSupportFragmentManager(),R.id.realtabcontent);
         //创建tabSpace
-        //TabHost.TabSpec tabSpec = mTabHost.newTabSpec("home");
-        //???why???
+        //???why???!!!!!!!!!!!!!!!!!!
         mLayoutInflater = LayoutInflater.from(this);
-        /*View view = mLayoutInflater.inflate(R.layout.tab_items,null);
-        //下面必须是view.findViewById不能是findViewById
-        ImageView icon = (ImageView) view.findViewById(R.id.icon_tab);
-        TextView textIndicator = (TextView) view.findViewById(R.id.txt_indicator);
-        icon.setBackgroundResource(R.mipmap.icon_home);
-        textIndicator.setText("首页");
-
-        tabSpec.setIndicator(view);
-        mTabHost.addTab(tabSpec, HomeFragment.class,null);*/
         initTabHost();
-
     }
 
     private void initTabHost() {
@@ -93,3 +89,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
+  /*     View view = mLayoutInflater.inflate(R.layout.tab_items,null);
+        //下面必须是view.findViewById不能是findViewById
+        ImageView icon = (ImageView) view.findViewById(R.id.icon_tab);
+        TextView textIndicator = (TextView) view.findViewById(R.id.txt_indicator);
+        icon.setBackgroundResource(R.mipmap.icon_home);
+        textIndicator.setText("首页");
+
+        tabSpec.setIndicator(view);
+        mTabHost.addTab(tabSpec, HomeFragment.class,null);*/
+//!!!!!!!!!!!!!!!!
